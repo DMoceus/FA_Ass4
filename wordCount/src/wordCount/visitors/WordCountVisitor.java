@@ -1,6 +1,7 @@
 package wordCount.visitors;
 import wordCount.visitors.Visitor;
-import wordCount.treeForStrings.WordSizeNode;
+import wordCount.treesForStrings.WordSizeNode;
+import wordCount.treesForStrings.StringWrapper;
 
 public class WordCountVisitor implements Visitor{
 	private int uniqueWords;
@@ -17,6 +18,8 @@ public class WordCountVisitor implements Visitor{
 		wordCount += o.getWordCount();
 		characterCount += (o.getWordCount() * o.getWordSize());
 	}
+	
+	public void visit(StringWrapper o){}
 	
 	public int getUniqueWords(){
 		return uniqueWords;

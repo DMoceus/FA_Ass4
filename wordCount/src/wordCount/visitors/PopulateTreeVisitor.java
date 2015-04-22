@@ -2,6 +2,7 @@ package wordCount.visitors;
 
 import java.util.TreeMap;
 import wordCount.treesForStrings.WordSizeNode;
+import wordCount.treesForStrings.StringWrapper;
 
 public class PopulateTreeVisitor implements Visitor{
 	public TreeMap<String,WordSizeNode> tree;

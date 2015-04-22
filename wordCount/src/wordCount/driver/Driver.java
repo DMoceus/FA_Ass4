@@ -6,6 +6,7 @@ import wordCount.treesForStrings.StringWrapper;
 import wordCount.treesForStrings.WordSizeNode;
 import wordCount.visitors.WordCountVisitor;
 import wordCount.visitors.PopulateTreeVisitor;
+import wordCount.visitors.Visitor;
 import wordCount.util.FileProcessor;
 
 public class Driver{
@@ -15,7 +16,7 @@ public class Driver{
 		String inName = args[0];
 		String outName = args[1];
 		FileProcessor processor;
-		StringWrapper stringIn
+		StringWrapper stringIn;
 		int iterations = 1;
 		int debug = 0;
 		try{
@@ -30,7 +31,7 @@ public class Driver{
 		
 		//Start Timing
 		long startTime = System.currentTimeMillis();
-		for(int i=0;i<NUM_ITERATIONS;i++){
+		for(int i=0;i<iterations;i++){
 			TreeMap<String,WordSizeNode> wordTree = new TreeMap<String,WordSizeNode>();
 			Visitor wordCountVisitor = new WordCountVisitor();
 			Visitor populateTreeVisitor = new PopulateTreeVisitor(wordTree);
@@ -39,7 +40,7 @@ public class Driver{
 			//Read Data
 			//Build Tree
 			while(processor.hasNextFromFile()){
-				stringIn = new StringWrapper(processor.next());
+				stringIn = new StringWrapper(processor.getNextFromFile());
 				stringIn.accept(populateTreeVisitor);
 			}
 			//Iterate Tree
@@ -49,7 +50,7 @@ public class Driver{
 		}
 		//End Timer
 		long finishTime = System.currentTimeMillis();
-		long totalTime = (finishTime - startTime) / NUM_ITERATIONS;
+		long totalTime = (finishTime - startTime) / iterations;
 		System.out.println("Total Time: " + totalTime);
 		//Print Output
 	}
