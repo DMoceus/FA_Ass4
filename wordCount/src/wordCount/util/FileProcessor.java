@@ -57,6 +57,19 @@ public class FileProcessor{
 		}
 	}
 
+	public String getNextFromFile(){
+		if(sc.hasNext()){
+			return sc.next();
+		}
+		else{
+			return "No Lines Left";
+		}
+	}
+
+	public boolean hasNextFromFile(){
+		return sc.hasNext();
+	}
+
 	/**
 	* Appends a line to the end of the output file.
 	* @param line - the line to be written
