@@ -30,6 +30,7 @@ public class Driver{
 			TreeMap<String,WordSizeNode> wordTree = new TreeMap<String,WordSizeNode>();
 			Visitor wordCountVisitor = new WordCountVisitor();
 			//Make File Accessors
+			
 			//Read Data
 			//Build Tree
 			//Iterate Tree
