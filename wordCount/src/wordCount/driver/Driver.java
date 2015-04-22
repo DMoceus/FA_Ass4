@@ -1,10 +1,11 @@
 package wordCount.driver;
 import java.util.TreeMap;
 import java.lang.NumberFormatException;
+
 import wordCount.treesForStrings.StringWrapper;
 import wordCount.treesForStrings.WordSizeNode;
 import wordCount.visitors.WordCountVisitor;
-import wordCount.visitors.Visitor;
+import wordCount.visitors.PopulateTreeVisitor;
 
 public class Driver{
 
@@ -29,6 +30,7 @@ public class Driver{
 		for(int i=0;i<NUM_ITERATIONS;i++){
 			TreeMap<String,WordSizeNode> wordTree = new TreeMap<String,WordSizeNode>();
 			Visitor wordCountVisitor = new WordCountVisitor();
+			Visitor populateTreeVisitor = new PopulateTreeVisitor();
 			//Make File Accessors
 			
 			//Read Data
