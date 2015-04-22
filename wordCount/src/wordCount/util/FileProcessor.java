@@ -35,11 +35,11 @@ public class FileProcessor{
 
 		} catch (FileNotFoundException e){
 			//logRef.printMessage(0, "FileProcessor has thrown a FileNotFoundException. inputFile does not exist. Exiting program.");
-			//System.exit(1);
-		} catch (IOException e){
+			System.exit(1);
+		}// catch (IOException e){
 			//logRef.printMessage(0, "FileProcessor has thrown an IOException. Error trying to write to file. Exiting program.");
 			//System.exit(1);
-		}
+		//}
 		
 	}
 

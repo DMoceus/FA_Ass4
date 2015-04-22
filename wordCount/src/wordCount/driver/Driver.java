@@ -60,6 +60,9 @@ public class Driver{
 			for(String key : wordTree.keySet()){
 				(wordTree.get(key)).accept(wordCountVisitor);
 			}
+			String outLine = "Words: " + Integer.toString(((WordCountVisitor)wordCountVisitor).getWordCount()) + " UniqueWords: " + Integer.toString(((WordCountVisitor)wordCountVisitor).getUniqueWords()) + " Characters: " + Integer.toString(((WordCountVisitor)wordCountVisitor).getCharacterCount());
+			processor.writeLineToFile(outLine, false);
+			
 		}
 		//End Timer
 		long finishTime = System.currentTimeMillis();
