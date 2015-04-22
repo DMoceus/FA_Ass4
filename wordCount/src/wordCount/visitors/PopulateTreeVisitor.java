@@ -11,6 +11,8 @@ public class PopulateTreeVisitor implements Visitor{
 		tree = treeIn;
 	}
 
+	public void visit(WordSizeNode o){}
+
 	//read words from a file and populate the tree
 	public void visit(StringWrapper o){
 		//take the string and store it in the tree map
