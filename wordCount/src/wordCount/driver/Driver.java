@@ -1,6 +1,10 @@
 package wordCount.driver;
+
 import java.util.TreeMap;
 import java.lang.NumberFormatException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
 
 import wordCount.treesForStrings.StringWrapper;
 import wordCount.treesForStrings.WordSizeNode;
@@ -15,6 +19,15 @@ public class Driver{
 		//Command Line Input
 		String inName = args[0];
 		String outName = args[1];
+
+		try{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(outName));
+			bw.flush();
+			bw.close();
+		} catch (IOException e){
+			System.out.println("Error in Driver: IOException while flushing output file.");
+		}
+
 		FileProcessor processor;
 		StringWrapper stringIn;
 		int iterations = 1;
