@@ -6,6 +6,7 @@ import wordCount.treesForStrings.StringWrapper;
 import wordCount.treesForStrings.WordSizeNode;
 import wordCount.visitors.WordCountVisitor;
 import wordCount.visitors.PopulateTreeVisitor;
+import wordCount.util.FileProcessor;
 
 public class Driver{
 
@@ -13,6 +14,8 @@ public class Driver{
 		//Command Line Input
 		String inName = args[0];
 		String outName = args[1];
+		FileProcessor processor;
+		StringWrapper stringIn
 		int iterations = 1;
 		int debug = 0;
 		try{
@@ -30,11 +33,15 @@ public class Driver{
 		for(int i=0;i<NUM_ITERATIONS;i++){
 			TreeMap<String,WordSizeNode> wordTree = new TreeMap<String,WordSizeNode>();
 			Visitor wordCountVisitor = new WordCountVisitor();
-			Visitor populateTreeVisitor = new PopulateTreeVisitor();
+			Visitor populateTreeVisitor = new PopulateTreeVisitor(wordTree);
 			//Make File Accessors
-			
+			processor = new FileProcessor(inName,outName);
 			//Read Data
 			//Build Tree
+			while(processor.hasNextFromFile()){
+				stringIn = new StringWrapper(processor.next());
+				stringIn.accept(populateTreeVisitor);
+			}
 			//Iterate Tree
 			for(String key : wordTree.keySet()){
 				(wordTree.get(key)).accept(wordCountVisitor);
