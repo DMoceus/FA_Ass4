@@ -41,7 +41,22 @@ almonte_adam_morris_david_assign4/wordCount/src/wordCount/visitors/WordCountVisi
 
 SAMPLE OUTPUT:
 
-***DMO GO HERE
+dmorris4@remote00:~/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount$ ant -buildfile src/build.xml -Darg0="input1M.txt" -Darg1="output.txt" -Darg2="1" -Darg3="0" run
+Buildfile: /import/linux/home/dmorris4/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount/src/build.xml
+
+jar:
+
+run:
+   [delete] Deleting: /import/linux/home/dmorris4/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount/output.txt
+     [java] Total Time: 2179
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+dmorris4@remote00:~/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount$
+
+output.txt:
+
+Words: 1000000 UniqueWords: 83836 Characters: 8202479
 
 TO COMPILE:
 
