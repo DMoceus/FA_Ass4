@@ -41,10 +41,6 @@ almonte_adam_morris_david_assign4/wordCount/src/wordCount/visitors/WordCountVisi
 
 SAMPLE OUTPUT:
 
-dmorris4@remote00:~/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount$ ant -buildfile src/build.xml -Darg0="input1M.txt" -Darg1="output.txt" -Darg2="1" -Darg3="0" run
-Buildfile: /import/linux/home/dmorris4/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount/src/build.xml
-
-jar:
 
 run:
    [delete] Deleting: /import/linux/home/dmorris4/Documents/Design_Patterns/morris_david_almonte_adam_assign4/wordCount/output.txt
