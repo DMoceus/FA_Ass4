@@ -2,16 +2,14 @@ package wordCount.util;
 
 public class MyLogger{
 	private static MyLogger instance = null;
-	private static final int NOTHING = 0;
-	private static final int ONLYOUTPUT = 1;
-	private static final int FILEWRITE = 2;
-	private static final int NEWTAB = 3;
-	private static final int REGISTEROBSERVER = 4;
+	private static final int DEFAULT = 0;
+	private static final int CONSTRUCTOR = 1;
+	private static final int ONVISIT = 2;
 	private static int DEBUG = 0;
 	
 	protected MyLogger(){}
 	public void setDebug(int value){
-		if((value >= NOTHING) && (value <= REGISTEROBSERVER)){
+		if((value >= DEFAULT) && (value <= ONVISIT)){
 			DEBUG = value;
 		}
 	}
@@ -22,21 +20,18 @@ public class MyLogger{
 		}
 		return instance;
 	}
-	
+	/*
 	public boolean showsSomething(){
 		return (DEBUG != NOTHING);
 	}
-	
+	*/
 	public void printMessage(int value){
 		if(DEBUG == value){
-			if(FILEWRITE == DEBUG){
-				System.out.println("File Wrote");
+			if(CONSTRUCTOR == DEBUG){
+				System.out.println("Constructor Called");
 			}
-			else if(NEWTAB == DEBUG){
-				System.out.println("New Tab");
-			}
-			else if(REGISTEROBSERVER == DEBUG){
-				System.out.println("Observer Registered");
+			else if(ONVISIT == DEBUG){
+				System.out.println("Visit Function Called");
 			}
 		}
 	}
