@@ -12,11 +12,13 @@ import wordCount.visitors.WordCountVisitor;
 import wordCount.visitors.PopulateTreeVisitor;
 import wordCount.visitors.Visitor;
 import wordCount.util.FileProcessor;
+import wordCount.util.MyLogger;
 
 public class Driver{
 
 	public static void main(String args[]){
 		//Command Line Input
+		MyLogger logger = MyLogger.getInstance();
 		String inName = args[0];
 		String outName = args[1];
 
@@ -31,15 +33,15 @@ public class Driver{
 		FileProcessor processor;
 		StringWrapper stringIn;
 		int iterations = 1;
-		int debug = 0;
+		logger.setDebug(0);
 		try{
 			iterations = Integer.parseInt(args[2]);
-			debug = Integer.parseInt(args[3]);
+			logger.setDebug(Integer.parseInt(args[3]));
 		}
 		catch(NumberFormatException e){
 			System.err.println("Iterations or Debug not ints, reverting to defaults");
 			iterations = 1;
-			debug = 0;
+			logger.setDebug(0);
 		}
 		
 		//Start Timing

@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 
+import wordCount.util.MyLogger;
+
 //import taskManager.util.MyLogger;
 /**
 * FileProcessor.java
@@ -19,6 +21,8 @@ public class FileProcessor{
 	Scanner sc;
 	String inputFile = "";
 	String outputFile = "";
+	
+	MyLogger logger;
 
 	//MyLogger logRef = MyLogger.getInstance();
 
@@ -30,6 +34,8 @@ public class FileProcessor{
 	public FileProcessor(String inFileName, String outFileName){
 		inputFile = inFileName;
 		outputFile = outFileName;
+		logger = MyLogger.getInstance();
+		logger.printMessage(1);
 		try{
 			sc = new Scanner(new File(inFileName));
 
