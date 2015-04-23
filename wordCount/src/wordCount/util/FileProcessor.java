@@ -38,7 +38,7 @@ public class FileProcessor{
 			System.exit(1);
 		}// catch (IOException e){
 			//logRef.printMessage(0, "FileProcessor has thrown an IOException. Error trying to write to file. Exiting program.");
-			//System.exit(1);
+			System.exit(1);
 		//}
 		
 	}
@@ -87,7 +87,7 @@ public class FileProcessor{
 		} catch (IOException e){
 			//System.out.println("Error in FileProcessor: IOException writing to file.");
 			//logRef.printMessage(0, "FileProcessor has thrown an IOException. Error trying to write to file. Exiting program.");
-			//System.exit(1);
+			System.exit(1);
 		}
 	}
 
